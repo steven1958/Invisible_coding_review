@@ -1,0 +1,28 @@
+{
+  "name": "Invisible_coding_review",
+  "version": "1.0.0",
+  "description": "A basic javascript function using typescript for logging the current weather and time for locations, given an array of inputs of the form an array of inputs (location name, postal code)",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steven1958/Invisible_coding_review.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/steven1958/Invisible_coding_review/issues"
+  },
+  "homepage": "https://github.com/steven1958/Invisible_coding_review#readme",
+  "devDependencies": {
+    "typescript": "^3.9.2"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2"
+  }
+}
