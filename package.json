@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/steven1958/Invisible_coding_review#readme",
   "devDependencies": {
+    "@types/node": "^14.0.1",
     "typescript": "^3.9.2"
   },
   "dependencies": {
