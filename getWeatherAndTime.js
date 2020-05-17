@@ -52,8 +52,50 @@ const apiKey = "40468bc9c23beec2e5a6af80ceca0e10";
 			// console.log(weatherJson);
 			let message = `It's ${weatherJson.main.temp} degrees Farenheit and ${weatherJson.weather[0].description} in ${weatherJson.name}\n`;
 			console.log(message);
+
+			const latitude = weatherJson.coord.lat;
+			const longitude = weatherJson.coord.lon;
+			
+			// make sure that the unix formatted date is an integer
+			const localUnixDate = parseInt(weatherJson.dt);
+			const localTimeOffset = parseInt(weatherJson.timezone);
+
+			// Create a new JavaScript Date object based on the timestamp
+			// multiplied by 1000 so that the argument is in milliseconds, not seconds.
+			// var date = new Date(localUnixDate * 1000);
+			// // Hours part from the timestamp
+			// var hours = date.getHours();
+			// // Minutes part from the timestamp
+			// var minutes = "0" + date.getMinutes();
+			// // Seconds part from the timestamp
+			// var seconds = "0" + date.getSeconds();
+
+			// // Will display time in 10:30:23 format
+			// var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+			// console.log(formattedTime);
+
+			var currentDate = new Date(); 
+			var dateInUtcSeconds = (currentDate.getTime())/1000;
+
+			var localDateSeconds = dateInUtcSeconds+localTimeOffset;
+
+			var localDate = new Date(0); // The 0 there is the key, which sets the date to the epoch
+			localDate.setUTCSeconds(localDateSeconds);
+
+
+			console.log(localDate);
+
+
+
+			// var date = new Date(); 
+			
+
+
+
+
 		} catch (error) {
-			console.log(`Data for ${location} could not be found`);
+			console.error(error);
+			// console.log(`Data for ${location} could not be found`);
 		}
 
 	}
@@ -66,8 +108,10 @@ const apiKey = "40468bc9c23beec2e5a6af80ceca0e10";
 	}
 
 	const testLocations_1 = ["94087", "21401", "37086", "2"];
-	const testLocations_2 =["New York", "10005", "Tokyo", "Sao Paulo", "Pluto"];
-	const testLocations_3 = ["94087"];
+	const testLocations_2 = ["New York", "10005", "Tokyo", "Sao Paulo", "Pluto"];
+	const testLocations_3 = ["21401"];
+	const testLocations_4 = [];
+	const testLocations_5 = ["Narnia"];
 
 	getWeatherForAll(testLocations_3);
 
